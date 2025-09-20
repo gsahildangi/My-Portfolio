@@ -82,41 +82,43 @@ export const ContactSection = () => {
                 <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
                 <form className="space-y-6">
                     <div>
-                        <label 
+                        {/* <label 
                           htmlFor="name" 
                           className="block text-sm font-medium mb-2"
                           >
-                              You Name</label>
+                              You Name</label> */}
                         <input 
                            type="text"
                            id="name"
                            name="name"
                            required
                            className="w-full py-3 px-4 rounded-md border border-input bg-backgound focus:outline-hidden focus:ring-2 focus:ring-primary"
-                           placeholder="Tony Stark..."
+                           placeholder="Your Name"
+                           autoComplete="Sahil"
                         />
                     </div>
                     <div>
-                        <label 
+                        {/* <label 
                           htmlFor="email" 
                           className="block text-sm font-medium mb-2"
                           >
-                              Your Email</label>
+                              Your Email</label> */}
                         <input 
                            type="email"
                            id="email"
                            name="email"
                            required
                            className="w-full py-3 px-4 rounded-md border border-input bg-backgound focus:outline-hidden focus:ring-2 focus:ring-primary"
-                           placeholder="tony@gmail.com"
+                           placeholder="Your Email"
+                           autoComplete="john@gmail.com"
                         />
                     </div>
                     <div>
-                        <label 
+                        {/* <label 
                           htmlFor="message" 
                           className="block text-sm font-medium mb-2"
                           >
-                              Your Message</label>
+                              Your Message</label> */}
                         <textarea 
                            type="text"
                            id="message"

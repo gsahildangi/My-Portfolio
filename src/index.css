@@ -199,5 +199,5 @@ here we can also give a class to starts which we are using if we are using the a
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
-  text-align: center;
+  /* text-align: center; */
 }

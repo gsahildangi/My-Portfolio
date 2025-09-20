@@ -1,4 +1,4 @@
-import { act, useState } from "react";
+import { useState } from "react";
 import {cn} from "../lib/util"
 
 
@@ -58,11 +58,11 @@ export const SkillsSection = () => {
          </div>
 
            {/* Skill Section */}
-           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
              {filterSkills.map((skill,key) => (
                  <div 
                  key={key} 
-                 className="bg-card p-6 rounded-lg shadow-xs card-hover"
+                 className="bg-card p-6 rounded-lg shadow-xs card-hover w-50"
                  > 
                     <div className="text-left mb-4">
                         <h3 className="font-semibold text-lg">{skill.name}</h3>
@@ -78,7 +78,7 @@ export const SkillsSection = () => {
 
                  </div>
                     
-             ))};
+             ))}
 
            </div>
 

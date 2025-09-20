@@ -1,6 +1,20 @@
-import { Briefcase, Code, Lightbulb, Palette, User } from "lucide-react"
+import { Code, Download, DownloadIcon, Lightbulb, Palette } from "lucide-react"
 
 export const AboutSection = () => {
+    
+    // this handler is to download the cv 
+    const handleDownloadCV = () => {
+        
+        const link = document.createElement('a');
+        link.href = '/Sahil_Dangi_CV.pdf';  //Placed in the public folder if in any other paste address accordigly
+        link.download = 'Sahil_Dangi_CV.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Option 2: If using external link (Google Drive, etc.) this is a second option if using online drive
+        // window.open('https://your-cv-link.com', '_blank');
+    };
 
     return <section id="about" className="py-24 px-4 relative">
         <div className="container mx-auto max-w-5xl">
@@ -8,29 +22,33 @@ export const AboutSection = () => {
                 About <span className="text-primary">Me</span>
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 item-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-                <div className="space-y-6">
+                <div className="space-y-6 text-center md:text-left">
                    <h3 className="text-2xl font-semibold md:text-left">Let's <span className="text-primary">talk</span> for
                        Something special</h3>
 
-                   <p className="text-muted-foreground">I'm a passionate fresher eager to push the limits of creativity and create high-engaging, user-friendly, 
-                      and memorable interactive experiences. I'm dedicated to learning and building responsive, accessible, and performant web applications
-                      using modern technologies.</p>
+                   <p className="text-muted-foreground">
+                      I'm a passionate fresher eager to create engaging, user-friendly web experiences. 
+                      Dedicated to building responsive and accessible applications using modern technologies.
+                   </p>
 
                     <p className="text-muted-foreground">
-                     I'm excited about creating elegant solutions to complex problems, and I'm constantly learning new technologies and 
-                     techniques to stay at the forefront of the ever-evolving web landscape. Ready to bring fresh perspectives and enthusiasm to every project.
+                     Excited about solving complex problems elegantly, I constantly learn new technologies 
+                     to stay current. Ready to bring fresh perspectives and enthusiasm to every project.
                    </p>
    
 
-                   <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
-                    <a href="#contact" className="cosmic-button">
+                   <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start items-center">
+                    <a href="#contact" className="cosmic-button w-full sm:w-auto text-center">
                         Get In Touch
                     </a>
-                    <a href="#  " className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300" >
-                       Download CV
-                    </a>
+                    <button 
+                        onClick={handleDownloadCV}
+                        className="flex items-start gap-2 px-6 py-2 font-semibold rounded-full border border-primary hover:bg-primary/30 transition-colors duration-300"
+                    >
+                       Download CV <DownloadIcon size={"20px"}/>
+                    </button>
                    </div> 
                 </div>
 
@@ -38,7 +56,7 @@ export const AboutSection = () => {
                 <div className="space-y-4">
                     <div className="gradient-border p-6 card-hover">
                         <div className="flex items-start gap-4">
-                            <div className="p-3 rounded-full bg-primary/10">
+                            <div className="p-3 rounded-full bg-primary/10 flex-shrink-0">
                                <Code className="h-6 w-6 text-primary"></Code>
                             </div>
                             
@@ -52,7 +70,7 @@ export const AboutSection = () => {
                     </div>
                     <div className="gradient-border p-6 card-hover">
                         <div className="flex items-start gap-4">
-                            <div className="p-3 rounded-full bg-primary/10">
+                            <div className="p-3 rounded-full bg-primary/10 flex-shrink-0">
                                <Palette className="h-6 w-6 text-primary"></Palette>
                             </div>
                             <div className="text-left">
@@ -65,7 +83,7 @@ export const AboutSection = () => {
                     </div>
                     <div className="gradient-border p-6 card-hover">
                         <div className="flex items-start gap-4">
-                            <div className="p-3 rounded-full bg-primary/10">
+                            <div className="p-3 rounded-full bg-primary/10 flex-shrink-0">
                                <Lightbulb className="h-6 w-6 text-primary"></Lightbulb>
                             </div>
                             <div className="text-left">
