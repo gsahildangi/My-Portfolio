@@ -45,7 +45,7 @@ export const AboutSection = () => {
                     </a>
                     <button 
                         onClick={handleDownloadCV}
-                        className="flex items-start gap-2 px-6 py-2 font-semibold rounded-full border border-primary hover:bg-primary/30 transition-colors duration-300"
+                        className="flex items-start justify-center md:justify-start gap-2 px-6 py-2 font-semibold rounded-full border border-primary w-full sm:w-auto hover:bg-primary/30 transition-colors duration-300"
                     >
                        Download CV <DownloadIcon size={"20px"}/>
                     </button>

@@ -27,6 +27,20 @@ export const Navbar = () => {
             window.removeEventListener('scroll', handleScroll);
         }
     }, [])
+    
+    //prevent the scrolling
+     useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
+        // Cleanup on unmount
+        return () => {
+            document.body.style.overflow = 'unset';
+        }
+    }, [isMenuOpen])
     //Initialize the theme here
     useEffect(() => {
         const storedTheme = localStorage.getItem("theme")
@@ -86,12 +100,12 @@ export const Navbar = () => {
                             "focus:outline-hidden"
                         )}
                         onClick={toggleTheme}
-                        aria-label="Toggle Theme"
+                        aria-label="Toggle theme"
                         >
                             {isDarkMode 
                             ? <Sun className="h-4 w-4 text-yellow-400" /> 
-                            : <Moon className="h-4 w-4 text-blue-600" />}
-
+                            : <Moon className="h-4 w-4 text-blue-600" />
+                            }
                     </button>
                 </div>
 
@@ -100,7 +114,7 @@ export const Navbar = () => {
                {/* Mobile theme Toggle */}
                 <div className="md:hidden flex items-center space-x-2">
                     <button
-                        className={cn("p-2 hover:bg-card rounded-full transition-colors duration-300",
+                        className={cn("p-2 hover:bg-card rounded-full transition-colors duration-30 relative z-50",
                             "focus:outline-hidden"
                         )}
                         onClick={toggleTheme}
@@ -123,29 +137,28 @@ export const Navbar = () => {
                     </button>
               </div>
 
-            {/* <obile Menu Overlay  */}
-            <div className={cn("fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
-                        "transition-all duration-300 md:hidden ",
-                        isMenuOpen 
+            {/* Mobile Menu Overlay */}
+                <div className={cn(
+                    "fixed top-0 left-0 w-full h-screen bg-background/97 backdrop-blur-md z-40 flex flex-col items-center justify-center",
+                    "transition-all duration-300 md:hidden",
+                    isMenuOpen 
                         ? "opacity-100 pointer-events-auto" 
-                        : "opacity-0 pointer-events-none"  // now have to write styling if menu is open user is on mobile - and to check that we have to create a state
-                    )}
-                    >
-
+                        : "opacity-0 pointer-events-none"
+                )}>
                     <div className="flex flex-col space-y-8 text-xl">
-                            {navItems.map((item, key) => (
-                                <a
-                                    key={key}
-                                    href={item.href}
-                                    className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    {item.name}
-                                </a>
-                            ))}
-                        </div>
+                        {navItems.map((item, key) => (
+                            <a
+                                key={key}
+                                href={item.href}
+                                className="text-foreground/80 hover:text-primary transition-colors duration-300 text-center"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                {item.name}
+                            </a>
+                        ))}
                     </div>
                 </div>
+            </div>
         </nav>
     );
 }
