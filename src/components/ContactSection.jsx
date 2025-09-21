@@ -70,7 +70,10 @@ export const ContactSection = () => {
                        </a> 
                      <a href="" target="_blank">
                      <Twitter className="h-6 w-6"/>
-                    </a>  
+                    </a> 
+                    <a href="" target="_blank">
+                     <Instagram className="h-6 w-6"/>
+                    </a>   
                     </div>
                 </div>
              </div>
