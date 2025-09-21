@@ -12,10 +12,8 @@ export const ContactSection = () => {
         </h2>
          
          <p className="p-4 text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-           I'm always excited to connect with fellow creatives, potential collaborators, and anyone 
-           interested in discussing new opportunities. Whether you have a project in mind, want to 
-           explore a partnership, or simply want to chat about design and development, I'd love to hear 
-           from you. Drop me a message and let's create something amazing together.
+           Ready to collaborate? Whether you have a project in mind or just want to chat about 
+           design and development, I'd love to hear from you. Let's create something amazing together!
          </p>
 
          {/* first part of the div that is contact information  */}

@@ -45,7 +45,7 @@ export const HeroSection = () => {
                   <span className={shouldAnimate ? "opacity-0 animate-fade-in" : "opacity-0"}>
                      Hello, I'm
                   </span>
-                  <span className={`text-primary ${shouldAnimate
+                  <span className={`text-primary text-glow${shouldAnimate
                      ? "opacity-0 animate-fade-in-delay-1"
                      : "opacity-0"}`}
                   >

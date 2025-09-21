@@ -38,7 +38,7 @@ export const SkillsSection = () => {
         >
             <div className="container mx-auto max-w-5xl">
                 <h2 className="text-2xl md:text-4xl font-bold mb-12 text-center">
-                    My <span className="text-primary">Skills</span>
+                    My <span className="text-primary text-glow">Skills</span>
                 </h2>
 
                 {/* Button to choose between different categories */}
