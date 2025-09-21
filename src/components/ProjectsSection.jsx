@@ -7,7 +7,7 @@ const projects = [
         title:"Shopping Cart Demo",
         description:"A fully functional e-commerce shopping cart built with React. Features include adding/removing items, quantity management, real-time price calculations, and a clean, responsive user interface for seamless shopping experience.",
         image:"/projects/Cart-demo.png",
-        tags: ["React" ,"JavaScript" , "Html/Css"],
+        tags: ["React" ,"JavaScript" , "Html/Css" ,"TailwindCss"],
         demoUrl: "#",
         githubUrl: "#"
     },
@@ -17,7 +17,7 @@ const projects = [
         title:"Weather-App",
         description:"A beautiful and responsive weather application that provides real-time weather information. Built with React and styled using TailwindCSS, it features location-based weather data, forecasts, and an intuitive user interface.",
         image:"/projects/Wheather-app.png",
-        tags: ["React" ,"TailwindCss" , "Html/Css"],
+        tags: ["React" ,"TailwindCss" , "Html/Css","JavaScript"],
         demoUrl: "#",
         githubUrl: "#"
     },
@@ -27,7 +27,7 @@ const projects = [
         title:"Quiz-App",
         description:"An interactive quiz application designed to test knowledge across various topics. Built with React and TailwindCSS, it features multiple-choice questions, score tracking, timer functionality, and instant feedback for an engaging learning experience.",
         image:"/projects/Quiz-app.png",
-        tags: ["React" ,"TailwindCss" , "Html/Css"],
+        tags: ["React" ,"TailwindCss" , "Html/Css","JavaScript"],
         demoUrl: "#",
         githubUrl: "#"
     }
