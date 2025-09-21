@@ -8,7 +8,7 @@ export const ContactSection = () => {
         {/* Main div */}
       <div className="container mx-auto max-w-5xl ">
         <h2 className="text-2xl md:text-4xl font-bold mb-4 text-center ">
-            Get In <span className="text-primary">Touch</span>
+            Get In <span className="text-primary text-glow">Touch</span>
         </h2>
          
          <p className="p-4 text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
@@ -23,7 +23,7 @@ export const ContactSection = () => {
             <div className="space-y-8">
                <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
               
-               <div className="space-y-6 justify-center">
+               <div className="space-y-6">
                   <div className="flex items-start space-x-4">
                       <div className="p-3 rounded-full bg-primary/10">
                           <Mail className="h-6 w-6 text-primary"/>
@@ -46,7 +46,7 @@ export const ContactSection = () => {
                             <a 
                             href="tel:+919992812699" 
                             className="text-muted-foreground hover:text-primary transition-colors"> 
-                              +(91) 992812699
+                              +(91) 9992812699
                             </a>
                       </div>
                   </div>
@@ -65,74 +65,66 @@ export const ContactSection = () => {
                </div>
                  
                 <div className="pt-8">
-                  <h4 className="font-medium mb-4">Connect with me.</h4>
-                    <div className="flex space-x-4 justify-center">
+                  <h4 className="font-medium mb-6">Connect with me.</h4>
+                    <div className="flex space-x-6 items-center">
                       <a href="" target="_blank">
-                       <Linkedin />
+                       <Linkedin className="h-6 w-6"/>
                        </a> 
                      <a href="" target="_blank">
-                     <Twitter />
+                     <Twitter className="h-6 w-6"/>
                     </a>  
                     </div>
                 </div>
              </div>
             
             {/* Second section for a form in main div */}
-             <div className="bg-card p-8 rounded-lg shadow-xs">
+             <div className="bg-card p-8 rounded-lg shadow-sm">
                 <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
-                <form className="space-y-6">
+                <form 
+                action="https://formspree.io/f/xwprekzo"
+                className="space-y-6" 
+                method="POST">
                     <div>
-                        {/* <label 
-                          htmlFor="name" 
-                          className="block text-sm font-medium mb-2"
-                          >
-                              You Name</label> */}
                         <input 
                            type="text"
                            id="name"
                            name="name"
                            required
-                           className="w-full py-3 px-4 rounded-md border border-input bg-backgound focus:outline-hidden focus:ring-2 focus:ring-primary"
+                           className="w-full py-3 px-4 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
                            placeholder="Your Name"
-                           autoComplete="Sahil"
                         />
                     </div>
                     <div>
-                        {/* <label 
-                          htmlFor="email" 
-                          className="block text-sm font-medium mb-2"
-                          >
-                              Your Email</label> */}
                         <input 
                            type="email"
                            id="email"
-                           name="email"
+                           name="_replyto"
                            required
-                           className="w-full py-3 px-4 rounded-md border border-input bg-backgound focus:outline-hidden focus:ring-2 focus:ring-primary"
+                           className="w-full py-3 px-4 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
                            placeholder="Your Email"
-                           autoComplete="john@gmail.com"
                         />
                     </div>
                     <div>
-                        {/* <label 
-                          htmlFor="message" 
-                          className="block text-sm font-medium mb-2"
-                          >
-                              Your Message</label> */}
                         <textarea 
-                           type="text"
                            id="message"
                            name="message"
+                           rows="5"
                            required
-                           className="w-full py-3 px-4 rounded-md border border-input bg-backgound focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
+                           className="w-full py-3 px-4 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
                            placeholder="Hello!, I would like to talk about..."
                         />
                     </div>
+                    
+                    {/* Hidden input for spam protection */}
+                    <input type="hidden" name="_subject" value="New message from portfolio contact form" />
+                    {/* <input type="hidden" name="_next" value="thank-you.html" /> */}
+
                     {/* we used cn funtion because we want to give condition in css so with help of cn funcion we can send css after comma */}
                     <button type="submit" 
                            className={cn("cosmic-button w-full flex item-center justify-center gap-2",
                                        
-                       )}><Send size={18}/></button>
+                       )}><Send size={18}/>
+                    </button>
                 </form>
 
              </div>  
